@@ -10,10 +10,11 @@ namespace RodCutting
     {
         static void Main(string[] args)
         {
-            int[] profit = new int[] { 1, 5, 8, 9, 10, 17, 17, 20, 24, 30 };
+            int[] profit = new int[] { 1, 5, 8, 9, 10, 17, 17, 20, 24, 30};
             int result = CutRod(profit, profit.Length);
+            int result2 = MemoizedCutRod(profit, profit.Length);
 
-            Console.WriteLine("Optimal Solution is:{0}", result);
+            Console.WriteLine("Optimal Solution is:{0}", result2);
         }
 
         static int CutRod(int[] profit, int n)
@@ -31,6 +32,38 @@ namespace RodCutting
 
             //Console.WriteLine("N={0}, Q={1}", n, q);
             Console.WriteLine();
+
+            return q;
+        }
+
+        static int MemoizedCutRod(int[] profit, int n)
+        {
+            int[] r = new int[n];
+            for (int i = 0; i < n; i++)
+                r[i] = int.MinValue;
+
+            return MemoizedCutRodAux(profit, r, n);
+        }
+
+        static int MemoizedCutRodAux(int[] profit, int[] r, int n)
+        {
+            if (n > 0 && r[n - 1] >= 0)
+                return r[n - 1];
+
+            int q = int.MinValue;
+
+            if (n == 0)
+            {
+                q = 0;
+                return 0;
+            }
+            else
+            {
+                for (int i = 1; i <= n; i++)
+                    q = Math.Max(q, profit[i - 1] + MemoizedCutRodAux(profit, r, n - i));
+            }
+
+            r[n - 1] = q;
 
             return q;
         }
