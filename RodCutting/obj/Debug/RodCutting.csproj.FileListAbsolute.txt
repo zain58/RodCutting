@@ -1,0 +1,7 @@
+C:\Users\AD\source\repos\RodCutting\RodCutting\bin\Debug\RodCutting.exe.config
+C:\Users\AD\source\repos\RodCutting\RodCutting\bin\Debug\RodCutting.exe
+C:\Users\AD\source\repos\RodCutting\RodCutting\bin\Debug\RodCutting.pdb
+C:\Users\AD\source\repos\RodCutting\RodCutting\obj\Debug\RodCutting.csprojResolveAssemblyReference.cache
+C:\Users\AD\source\repos\RodCutting\RodCutting\obj\Debug\RodCutting.csproj.CoreCompileInputs.cache
+C:\Users\AD\source\repos\RodCutting\RodCutting\obj\Debug\RodCutting.exe
+C:\Users\AD\source\repos\RodCutting\RodCutting\obj\Debug\RodCutting.pdb
