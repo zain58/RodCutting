@@ -20,6 +20,7 @@ namespace RodCutting
 
         static int CutRod(int[] profit, int n)
         {
+           int time= gettime();
             if (n == 0) // first element is 0
                 return 0;
 
@@ -39,6 +40,7 @@ namespace RodCutting
 
         static int MemoizedCutRod(int[] profit, int n)
         {
+            int time = gettime();
             int[] r = new int[n];
             for (int i = 0; i < n; i++)
                 r[i] = int.MinValue;
@@ -48,6 +50,7 @@ namespace RodCutting
 
         static int MemoizedCutRodAux(int[] profit, int[] r, int n)
         {
+            int time= gettime();
             if (n > 0 && r[n - 1] >= 0)
                 return r[n - 1];
 
@@ -71,6 +74,7 @@ namespace RodCutting
 
         static int BottomUpCutRod(int[] profit, int n)
         {
+            int time = gettime();
             int[] r = new int[n + 1]; 
             r[0] = 0;
 
